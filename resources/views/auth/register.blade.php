@@ -20,8 +20,8 @@
                         <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        <label for="username" class="form-label">Username</label>
+                        <input type="username" name="username" id="username" class="form-control" placeholder="Enter username" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
