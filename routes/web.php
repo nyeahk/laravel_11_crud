@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
-
+     
+      Route::get('/', function () {
+         return view('auth.login');
+    });
+    
     Route::resource('products', ProductController::class);
 
     Route::get('register', [AuthController::class, 'showRegister'])->name('register');
