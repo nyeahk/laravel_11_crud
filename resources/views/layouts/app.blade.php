@@ -13,10 +13,15 @@
         <h3 class="mt-3 text-center">Simple Laravel 11 CRUD Application Tutorial</h3>
         
         <div class="d-flex justify-content-end">
+            @auth
+        <div class="d-flex justify-content-end">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
+        </div>
+        @endauth
+
         </div>
 
         @yield('content')

@@ -10,7 +10,6 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <!-- Left Column: Product Info -->
                     <div class="col-md-7">
                         <div class="mb-3 row">
                             <label class="col-md-4 col-form-label text-md-end text-start"><strong>Code:</strong></label>
@@ -43,8 +42,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Right Column: Product Image -->
                     <div class="col-md-5 d-flex justify-content-center align-items-start">
                         @if($product->image)
                             <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" class="img-fluid rounded shadow" style="max-width: 100%; height: auto; max-height: 400px;">

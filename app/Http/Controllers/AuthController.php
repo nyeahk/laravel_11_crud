@@ -18,13 +18,13 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'username' => 'required|string|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|string|confirmed|min:6',
         ]);
 
         User::create([
             'name' => $request->name,
-            'username' => $request->username,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
@@ -36,10 +36,10 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request)
+    public function login(Request $request) 
     {
         $credentials = $request->validate([
-            'username' => 'required',
+            'email' => ['required', 'email'],
             'password' => 'required',
         ]);
 
@@ -49,7 +49,7 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'username' => 'Invalid credentials.',
+            'email' => 'Invalid credentials.',
         ]);
     }
 
